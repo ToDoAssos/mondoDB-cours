@@ -9,6 +9,7 @@ const app = express();
 
 const db = require("./app/models");
 db.mongoose.connect(db.url, {useNewUrlParser: true, useUnifiedTopology: true})
+// db.mongoose.connect(db.url, {useNewUrlParser: true, useUnifiedTopology: true, user: 'root', pass : 'root'})
   .then(() => { console.log("Connected to the database!");})
   .catch(err => { console.log("Cannot connect to the database!", err); process.exit();});
 
@@ -30,7 +31,7 @@ app.post("/", (req, res) => {
       res.send(data);
     })
     .catch(err => {
-      res.status(500).send('Error');
+      res.status(500).send('Error add');
   });
 });
 
@@ -40,7 +41,7 @@ app.get('/' ,(req, res) => {
       res.send(data);
     })
     .catch(err => {
-      res.status(500).send('Error');
+      res.status(500).send('Error get');
   });
 });
 
@@ -50,7 +51,7 @@ app.get('/:id' ,(req, res) => {
       res.send(data);
     })
     .catch(err => {
-      res.status(500).send('Error');
+      res.status(500).send('Error GetById');
   });
 });
 
@@ -61,7 +62,7 @@ app.post('/update' ,(req, res) => {
       res.send(data);
     })
     .catch(err => {
-      res.status(500).send('Error');
+      res.status(500).send('Error Update');
   });
 });
 
@@ -71,7 +72,7 @@ app.post('/delete' ,(req, res) => {
       res.send(data);
     })
     .catch(err => {
-      res.status(500).send('Error');
+      res.status(500).send('Error delete');
   });
 });
 
