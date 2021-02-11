@@ -24,8 +24,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //== Create
 app.post("/", (req, res) => {
   const resto = new Restaurant({
-    name: req.body.name,
-    location: req.body.location,
+    firstname: req.body.firstname,
+    lastname: req.body.lastname,
   });
   resto.save(resto).then(data => {
       res.send(data);

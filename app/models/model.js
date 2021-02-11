@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
 const schema = mongoose.Schema({
-  location: Object,
-  name: String,
+  firstname: String,
+  lastname: String,
 });
 
-module.exports = mongoose.model('Restaurants', schema);
+module.exports = mongoose.model('users', schema);
